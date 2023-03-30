@@ -17,8 +17,8 @@ Screen size has changed a lot over time. From 640x480 to 800x600 to 1024x768.
 User networks and conditions vary widely: wifi, hardline, mobile. The web experience is not homogenous as we imagined it to be. Lower class devices perfom worse than higher class ones. When developing for the web, we should consider all of these things.
 
 ## How can we make our websites work for everyone
-Progressive enhancement / graceful degradation (escalator can never break)
-Consider device / network capabilities
+* Progressive enhancement / graceful degradation (escalator can never break)
+* Consider device / network capabilities
 
 
 
