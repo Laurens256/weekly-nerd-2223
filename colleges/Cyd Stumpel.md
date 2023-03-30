@@ -1,5 +1,5 @@
 # Accessible, Creative Development
-Cyd Stumpel March 2023
+Cyd Stumpel - March 2023
 
 Website accessibility is a critical consideration for web developers to ensure that everyone, regardless of their abilities, can access and use websites. Unfortunately, many award-winning websites are still inaccessible.
 
