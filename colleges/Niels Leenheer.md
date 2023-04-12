@@ -1,6 +1,4 @@
-Niels Achternaaaaaaaaam dingetj - april 2023
-
-Niels is frontend webdeveloper
+Niels Leenheer - april 2023
 
 ## Project Fugu
 Fugu is a project designed to close the gap between native- and web applications-> kind of an improvement over electron.
