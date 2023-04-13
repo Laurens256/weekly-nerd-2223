@@ -15,30 +15,3 @@ A (more) valid alternative to common scrolling libraries, is [Lenis](https://len
 
 ## Final words
 To make a website accessible, developers should rethink their defaults. They should consider and when possible, not interfere the native functionality the browser provides. By taking these steps, developers can create websites that are accessible to everyone, regardless of their abilities.
-
-
-
-<!--
-- Creative development wat wel accessible is.
-
-## Why are so many award winning website inaccessible?
-- Focus states worden vaak verborgen
-- Veel bewegende tekst, rare html etc.
-
-## Veelgemaakte fouten bij het maken van een website
-- Tekst-select wordt uitgezet waardoor bijvoorbeeld screen readers geselecteerde tekst niet kunnen lezen.
-- Focus states worden verborgen
-- Native scroll wordt verwijderd of aangepast
-- Alt teksten worden vergeten
-- Geen tekst alternatieven voor geanimeerde tekstvlakken. Zorgt ervoor dat letters 1 voor 1 worden voorgelezen
-- Prefers-reduced-motion en soortgelijk wordt niet gerespecteerd
-
-Alternatief voor smooth scroll libraries:
-Lenis: ctrl + find werkt wel
-
-## Hoe maak je een website toegankelijk?
-- Rethink your defaults
-- Voeg tekst alternatives toe voor img en line animations
-- Denk na over native functionaliteit van scrolling libraries
-- Respecteer prefers-reduced-motion en soortgelijke media queries
--->
