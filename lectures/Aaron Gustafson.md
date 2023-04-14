@@ -1,4 +1,4 @@
-# \<h1\>
+# Making websites work for everyone
 Aaron Gustafson - March 2023
 
 Aaron is the Principal Accessibility Innovation Strategist at Microsoft. In this college, he discusses accessibility for the web and how to make websites work for everyone.
