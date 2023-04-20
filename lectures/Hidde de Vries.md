@@ -2,7 +2,23 @@
 
 Hidde de Vries - april 2023
 
-Hidde is a frontend developer who is currently working a lot on accessibility on the web. In this lecture, he will talk specifically about the use of modals and dialogs on the web.
+Modals and dialogs are commonly used on websites to present important information or to prompt the user to perform an action. When using these elements it's important to use these them correctly to ensure a positive user experience. In his lecture, frontend developer and accessibility expert Hidde de Vries talks about the use of modals and dialogs and provides useful definitions and tips for their implementation.
+
+### Modal vs. non-modal
+A modal is a type of dialog that appears on top of the main content of a website and requires the user's attention. While a modal is displayed, the user cannot interact with the main content of the website. On the other hand, a non-modal dialog is displayed on top of the main content, but the user can still interact with the website while the dialog is open. It's important to make sure the website's main content is inert while a modal is open to prevent user confusion or interaction with elements outside the modal.
+
+Modals and dialogs can be dismissed either explicitly, by clicking a button, or through a light dismiss, such as clicking outside or hovering outside the element. 
+
+### Z-index and top layer
+CSS's Z-index property is used to determine the stacking order of elements, with higher values appearing on top of lower values. However, the relatively new top layer feature ensures that content inside the top layer is always displayed on top, regardless of the z-index of other elements. The top layer can be useful to place modals or other dialogs on top of the main content of the website.
+
+Backdrops are often used in modals to create a semi-transparent overlay behind the dialog, highlighting its importance and slightly hiding the page's contents. Elements inside the top layer have this backdrop built in. This backdrop can be styled using the `::backdrop` pseudo selector in CSS.
+
+### Keyboard focus traps
+Keyboard focus traps can be used to prevent the user from interacting with the main content of the website while the modal or dialog is open. Focus traps work by making elements outside the modal un-tabbable. This ensures that the user's attention remains inside the modal. It's important to remove the focus trap once the modal is closed, so the rest of the website becomes tabbable again.
+
+
+<!-- Hidde is a frontend developer who is currently working a lot on accessibility on the web. In this lecture, he will talk specifically about the use of modals and dialogs on the web.
 
 ## Definitions
 
@@ -36,4 +52,4 @@ Sometimes modals have a backdrop behind them. This is a semi-transparent overlay
 
 ### Keyboard focus traps
 
-A keyboard focus trap is a way to trap the keyboard focus inside a modal or dialog. This means that the user can only interact with the modal or dialog while it is displayed. A focus trap should only be used temporarily, and should be removed when the modal or dialog is dismissed.
+A keyboard focus trap is a way to trap the keyboard focus inside a modal or dialog. This means that the user can only interact with the modal or dialog while it is displayed. A focus trap should only be used temporarily, and should be removed when the modal or dialog is dismissed. -->
