@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<base href="../" />
+
+		<link rel="stylesheet" href="/styles/main.css" />
+
+		<title>Hidde de Vries</title>
+	</head>
+	<body>
+		<a class="back-home" href="index.html">Back to home</a>
+		<section class="article">
+			<header>
+				<h1>Dialogs and Modals</h1>
+				<small>Hidde de Vries - april 2023</small>
+			</header>
+
+			<p>
+				Modals and dialogs are commonly used on websites to present important information
+				or to prompt the user to perform an action. When using these elements it&#39;s
+				important to use these them correctly to ensure a positive user experience. In his
+				lecture, frontend developer and accessibility expert Hidde de Vries talks about
+				the use of modals and dialogs and provides useful definitions and tips for their
+				implementation.
+			</p>
+
+			<div>
+			<h2>Modal vs. non-modal</h3>
+			<p>
+				A modal is a type of dialog that appears on top of the main content of a website
+				and requires the user&#39;s attention. While a modal is displayed, the user cannot
+				interact with the main content of the website. On the other hand, a non-modal
+				dialog is displayed on top of the main content, but the user can still interact
+				with the website while the dialog is open. It&#39;s important to make sure the
+				website&#39;s main content is inert while a modal is open to prevent user
+				confusion or interaction with elements outside the modal.
+			</p>
+			<p>
+				Modals and dialogs can be dismissed either explicitly, by clicking a button, or
+				through a light dismiss, such as clicking outside or hovering outside the element.
+			</p>
+		</div>
+
+		<div>
+			<h2>Z-index and top layer</h3>
+			<p>
+				CSS&#39;s Z-index property is used to determine the stacking order of elements,
+				with higher values appearing on top of lower values. However, the relatively new
+				top layer feature ensures that content inside the top layer is always displayed on
+				top, regardless of the z-index of other elements. The top layer can be useful to
+				place modals or other dialogs on top of the main content of the website.
+			</p>
+			<p>
+				Backdrops are often used in modals to create a semi-transparent overlay behind the
+				dialog, highlighting its importance and slightly hiding the page&#39;s contents.
+				Elements inside the top layer have this backdrop built in. This backdrop can be
+				styled using the <code>::backdrop</code> pseudo selector in CSS.
+			</p>
+
+		</div>
+
+		<div>
+			<h2>Keyboard focus traps</h2>
+			<p>
+				Keyboard focus traps can be used to prevent the user from interacting with the
+				main content of the website while the modal or dialog is open. Focus traps work by
+				making elements outside the modal un-tabbable. This ensures that the user&#39;s
+				attention remains inside the modal. It&#39;s important to remove the focus trap
+				once the modal is closed, so the rest of the website becomes tabbable again.
+			</p>
+		</div>
+		</section>
+	</body>
+</html>

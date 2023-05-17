@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	color-scheme: light dark;
+	font-size: large;
+}
+
+body {
+	font-family: sans-serif;
+	color: var(--text-color);
+	background-color: var(--bg-color);
+}
+
+a {
+	color: var(--link-color);
+}
+
+button {
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	cursor: pointer;
+}
+
+img {
+	max-width: 100%;
+}
+
+code {
+	background-color: var(--code-bg-color);
+	padding: 0.1rem 0.3rem;
+	border-radius: 0.2rem;
+}
+
+:root {
+	--text-color: #111;
+	--bg-color: #fff;
+	--link-color: #19589c;
+	--code-bg-color: #f5f5f5;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	:root {
+		--text-color: #fff;
+		--bg-color: #252525;
+		--link-color: #ff00ff;
+		--code-bg-color: #333;
+	}
+}
+
+a.back-home {
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+}
+
+button.back-to-top {
+	position: fixed;
+	right: calc(50% - min(800px, 95%) / 2);
+	bottom: -100%;
+	transition: bottom 0.4s ease;
+}
+
+body.show-scroll button.back-to-top {
+	bottom: 1rem;
+}
+
+section.article {
+	max-width: min(800px, 95%);
+	margin: 2rem auto 5rem auto;
+}
+
+section.article > * {
+	margin-bottom: 1rem;
+}
+
+section.article div > p + p {
+	margin-top: 1rem;
+}
+
+section.article ul li + li,
+section.article ol li + li {
+	margin-top: 0.5rem;
+}
+
+section.article header {
+	margin-bottom: 1.5rem;
+}
+
+section.article header img {
+	width: 100%;
+	max-height: 400px;
+	object-fit: cover;
+}
+
+section.article header h1 {
+	margin-top: 1rem;
+	font-size: 1.7rem;
+}
+
+section.article figure figcaption {
+	text-align: center;
+}

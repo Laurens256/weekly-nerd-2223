@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<base href="../" />
+
+		<link rel="stylesheet" href="/styles/main.css" />
+
+		<title>Cyd Stumpel</title>
+	</head>
+	<body>
+		<a class="back-home" href="index.html">Back to home</a>
+		<section class="article">
+			<header>
+				<h1>Accessible, Creative Development</h1>
+				<small>Cyd Stumpel - March 2023</small>
+			</header>
+
+			<p>
+				Website accessibility is a critical consideration for web developers to ensure
+				that everyone, regardless of their abilities, can access and use websites.
+				Unfortunately, many award-winning websites are still inaccessible.
+			</p>
+
+			<p>
+				In this lecture, Cyd Stumpel, creative freelance developer, discussed the
+				importance of website accessibility and how to make websites accessible. She will
+				also discuss common mistakes that developers and designers make when creating
+				websites and how to avoid them.
+			</p>
+
+			<div>
+				<h2>Common mistakes</h2>
+				<p>
+					Some common mistakes that contribute to inaccessibility include hiding focus
+					states, using excessive moving text, badly formatted HTML and not respecting
+					<code>prefers-reduced-motion</code> and similar media queries. All of these
+					mistakes can lead to a less pleasurable experience for users, especially those
+					with disabilities.
+				</p>
+			</div>
+
+			<div>
+				<h2>Smooth scroll libraries</h2>
+				<p>
+					Something that lots of &quot;creative&quot; websites do is remove the native
+					scroll functionality and replace it with the scrolling functionality of a smooth
+					scroll library. This is often done to create a more stylistic experience for
+					users. However, these scroll libraries often disrupt the native functionality of
+					the browser, which can make it more difficult to interact with the website. An
+					example Cyd mentioned is the &quot;find&quot; function (<code>ctrl / cmd</code>
+					+ <code>f</code>) which most browsers have. This function allows users to search
+					for a specific word on the page. When native scroll is enabled, when a keyword
+					is found on the page, the browser scroll down to the keyword automatically. When
+					native scroll is disabled however, the browser is not able to scroll down to the
+					keyword. This leads to the user seeing not being able to jump to a keyword by
+					searching for it.
+				</p>
+				<p>
+					A (more) valid alternative to common scrolling libraries, is
+					<a href="https://lenis.studiofreight.com/">Lenis</a>. Lenis is a scrolling
+					library which allows the developer to control the scrolling experience more
+					freely while still keeping most functionality provided by native scroll.
+				</p>
+			</div>
+
+			<div>
+				<h2>Closing words</h2>
+				<p>
+					To make a website accessible, developers should rethink their defaults. They
+					should consider and when possible, not interfere the native functionality the
+					browser provides. By taking these steps, developers can create websites that are
+					accessible to everyone, regardless of their abilities.
+				</p>
+			</div>
+		</section>
+	</body>
+</html>
