@@ -1,1 +1,0 @@
-nog niet geschreven kom later nog een keer spieken😶‍🌫️
