@@ -76,12 +76,8 @@ section.article {
 	margin: 2rem auto 5rem auto;
 }
 
-section.article > * {
+section.article *:not(li):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(img):not(div *:last-child) {
 	margin-bottom: 1rem;
-}
-
-section.article div > p + p {
-	margin-top: 1rem;
 }
 
 section.article ul li + li,
