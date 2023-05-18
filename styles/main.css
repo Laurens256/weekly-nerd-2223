@@ -56,6 +56,7 @@ code {
 	}
 }
 
+/* page controls (back buttons) */
 a.back-home {
 	position: absolute;
 	top: 0.5rem;
@@ -75,6 +76,10 @@ button.back-to-top {
 	aspect-ratio: 1;
 	border: solid 2px var(--link-color);
 	border-radius: 8px;
+}
+
+body.show-scroll button.back-to-top {
+	bottom: 1rem;
 }
 
 button.back-to-top svg {
@@ -98,50 +103,59 @@ button.back-to-top:focus-visible svg {
 	animation: bounce 0.4s ease-in-out infinite alternate;
 }
 
+button.back-to-top:focus-visible {
+	outline-offset: 2px;
+	outline: solid 2px var(--text-color);
+}
+
 @keyframes bounce {
 	to {
 		top: 40%;
 	}
 }
 
-body.show-scroll button.back-to-top {
-	bottom: 1rem;
-}
 
-section.article {
+/* article styles */
+article.full-story {
 	max-width: min(800px, 95%);
 	margin: 2rem auto 5rem auto;
 }
 
-section.article *:not(:where(li, h1, h2, h3, h4, h5, h6, img, :last-child)) {
+article.full-story *:not(:where(li, h1, h2, h3, h4, h5, h6, img, a code, span :last-child)) {
 	margin-bottom: 1rem;
 }
 
-section.article blockquote {
+article.full-story blockquote {
 	margin: 1rem 0;
 	padding: 0.5rem 1rem;
 	border-left: 5px solid var(--blockquote-border-color);
 	font-style: italic;
 }
 
+article.full-story blockquote a {
+	font-style: normal;
+}
 
-
-section.article ul li + li,
-section.article ol li + li {
+article.full-story ul li + li,
+article.full-story ol li + li {
 	margin-top: 0.5rem;
 }
 
-section.article header img {
+article.full-story header figure img {
 	width: 100%;
 	max-height: 400px;
 	object-fit: cover;
 }
 
-section.article header h1 {
+article.full-story header figure figcaption {
+	font-size: 0.9rem;
+}
+
+article.full-story header h1 {
 	margin-top: 1rem;
 	font-size: 1.7rem;
 }
 
-section.article figure figcaption {
+article.full-story figure figcaption {
 	text-align: center;
 }
