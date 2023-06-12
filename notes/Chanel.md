@@ -38,4 +38,3 @@ Three environments for testing:
 - Development: for testing and developing
 - Acceptance: for testing with the client
 - Production: the live website
-

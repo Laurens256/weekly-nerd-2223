@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+
+		<link rel="stylesheet" href="../styles/main.css" />
+
+		<title>Chanel</title>
+	</head>
+	<body>
+		<a href="../index.html">Back home</a>
+		<article class="full-story">
+			<header>
+				<h1>Triple's tech stack</h1>
+				<small>Chanel - May 2023</small>
+			</header>
+
+			<p>
+				Chanel is a frontend developer at
+				<a href="https://www.wearetriple.com/en">Triple</a>, a full service digital agency
+				located in Alkmaar. She graduated from CMD at the Amsterdam University of Applied
+				Sciences in 2018. In this talk, Chanel told us about Triple's tech stack and their
+				motivation for using certain technologies.
+			</p>
+
+			<div>
+				<h2>Git</h2>
+				<p>
+					Git is an important tool at Triple. It's used for version control and makes it
+					easier for multiple developers to collaborate on projects. The workflow in Git
+					at Triple is as follows:
+				</p>
+
+				<ol>
+					<li>Create a branch</li>
+					<li>Commit & push</li>
+					<li>Create a pull request</li>
+					<li>Push to the main branch</li>
+					<li>Deploy!</li>
+				</ol>
+			</div>
+
+			<div>
+				<h2>Npm</h2>
+				<p>
+					At Triple, when working on Node projects, developers are allowed to use packages
+					from the Node Package Manager (npm). Using packages inside your project is
+					something that should be thought over carefully because it could allow for
+					vulnerabilities in your project. When using npm packages, it's important to
+					check the following:
+				</p>
+				<ul>
+					<li>When was the last update?</li>
+					<li>How many downloads does it have?</li>
+					<li>How many contributors does it have?</li>
+					<li>How big is the package?</li>
+					<li>What are it's dependencies?</li>
+				</ul>
+			</div>
+
+			<div>
+				<h2>Vanilla, library or framework</h2>
+				<p>
+					When starting a project, one of the most important things to decide on is
+					whether to use vanilla Javascript, or use a library or framework. Sometimes
+					vanilla Javascript is the better option, but sometimes using a library or
+					framework can help you prevent reinvent the wheel.
+				</p>
+
+				<p>
+					In the past, Triple used Angular a lot. Nowadays, they use React and Next.js.
+					For projects where SEO (search engine optimilization) isn't imporant, React is a
+					good option. When using React, content is rendered on the client which isn't
+					good for SEO, but can give your website an "appy" feel. If SEO is important,
+					Next.js is a better option. Next.js renders content on the server, either during
+					build time or during runtime, which is better for SEO.
+				</p>
+
+				<p>
+					Triple is currently preparing to switch to Svelte. Svelte is a Javascript
+					framework that is faster, lighter and easier to use than React. It's also easier
+					to learn for developers who are new to Javascript frameworks since it's closer
+					to vanilla Javacript.
+				</p>
+			</div>
+
+			<div>
+				<h2>Typescript</h2>
+				<p>
+					At Triple, Typescript is used a lot. Typescript is a superset of Javascript,
+					which means that all valid Javascript is valid Typescript. Typescript
+					<s>adds</s> enforces types in Javascript. Using Typescript helps allow
+					developers to find bugs <em>before</em> they get to the browser. Below is some
+					example code highlighting the differences between Javascript and Typescript.
+				</p>
+				<pre>
+				<code>
+// Javascript
+function add(a, b) {
+	return a + b;
+}
+
+add(1, 2); // 3
+add('1', '2'); // '12'
+
+// Typescript
+function add(a: number, b: number): number {
+	return a + b;
+}
+
+add(1, 2); // 3
+add('1', '2'); // Error: Argument of type 'string' is not assignable to parameter of type 'number'.
+				</code>
+			</pre>
+				<p>
+					Of course, Typescript does a lot more than simple stuff like this. To read more
+					about Typescript, check out their
+					<a
+						href="https://www.typescriptlang.org/docs/"
+						aria-label="typescript documentation"
+						>docs</a
+					>
+				</p>
+			</div>
+			.
+
+			<div>
+				<h2>CSS</h2>
+				<p>
+					At Triple, they use SASS, a CSS preprocessor. SASS is a superset of CSS, which
+					means that all valid CSS is valid SASS. SASS adds features like variables,
+					nesting, mixins, inheritance, etc. Below is some example code showing why SASS
+					can be a useful too to write less CSS.
+				</p>
+
+				<pre>
+				<code>
+<!-- SASS loop-->
+@for $i from 1 through 3 {
+	.item-#{$i} { width: 2em * $i; }
+}
+
+<!-- output -->
+.item-1 {
+	width: 2em;
+}
+.item-2 {
+	width: 4em;
+}
+.item-3 {
+	width: 6em;
+}
+				</code>
+			</pre>
+			</div>
+
+			<div>
+				<h2>Azure & Azure DevOps</h2>
+				<p>
+					Azure is a cloud computing service created by Microsoft. Azure DevOps is a
+					service that provides developers with tools to help them with their development
+					process. At Triple, they use Azure DevOps for their pipelines. A pipeline is a
+					virtual machine that runs your code and checks it against the standards. Then
+					builds it so it's ready for deployment. Triple uses three environments for
+					testing:
+				</p>
+				<ol>
+					<li>Development: for testing and developing</li>
+					<li>Acceptance: for testing with the client</li>
+					<li>Production: the live website</li>
+				</ol>
+			</div>
+		</article>
+	</body>
+</html>
