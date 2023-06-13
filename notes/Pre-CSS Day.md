@@ -1,4 +1,4 @@
-## Sophie Koonin
+<!-- ## Sophie Koonin
 
 Sophie is a web engineering lead at Monzo https://localghost.dev https://sophie.omg.lol
 
@@ -39,4 +39,23 @@ Some new features in devtools:
 - Animation timing
 - Container queries
 - Scroll driven animations
+ -->
 
+## Sophie Koonin
+
+Sophie Koonin, a web engineering lead at Monzo, aims to revive the quirky and humorous website styles of the 2000s. She showcased a website she built using modern and accessible HTML, CSS, and JavaScript, while incorporating the aesthetics of the 2000s. 
+
+Sophie emphasizes the importance of accommodating user preferences, such as disabling animations and autoplay, utilizing media queries like prefers-reduced-motion, and employing the HTML source attribute to load static versions of gifs/videos. In a demo, Sophie showed us how to create a 200s WordArt effect using modern CSS techniques she used the CSS `background-clip: text;` property and applyied a drop shadow to the wrapper for a simulated 3D effect.
+
+Sophie also highlights the evolution of web practices, mentioning how audio autoplay is no longer favored and opting for audio to be "opt-in" only. She recalls the use of webrings to interlink websites and shares her creation of a webring for silly/funny websites, implemented through Google Sheets. Additionally, Sophie developed a guestbook using Mastodon, a federated social network, as an alternative to leaving messages on websites.
+
+
+## Adam Argyle
+
+Adam Argyle talked to us about CSS variable fonts, which contain multiple variations of a font within a single font file. By using CSS, developers can modify font attributes such as weight, width, slant, and morphing. Argyle also talks about the LCH color model, which provides a more accurate representation of human-perceived color compared to RGB. LCH stands for lightness (L), chroma (C), and hue (H). To create a palette / color in this style, Adam showed us this website he made https://gradient.style
+
+## Debugging with DevTools
+
+Browser devtools is a tool that assists developers in troubleshooting various aspects of web development, including HTML, CSS, JavaScript and network requests. The Chrome (?) devtools team has been working hard to ensure that the tooling provides a good user experience, not just by exposing information but also by presenting it in an easily understandable manner. 
+
+DevTools offers CSS authoring hints, displaying reasons for inactive styles or selectors and indicating specificity. The rapid pace of CSS feature development requires DevTool developers to keep up. Some new features in DevTools include color debugging/conversion, animation timing, container queries, and scroll-driven animations.

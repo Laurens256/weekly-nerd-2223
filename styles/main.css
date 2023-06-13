@@ -38,6 +38,10 @@ code {
 	border-radius: 0.2rem;
 }
 
+ol, ul {
+	list-style-position: inside;
+}
+
 :root {
 	--text-color: #111;
 	--bg-color: #fff;
