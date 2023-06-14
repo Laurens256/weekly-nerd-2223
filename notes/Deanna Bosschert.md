@@ -1,1 +1,7 @@
-<!-- todo -->
+In this Weekly Nerd session, Deanna Bosschert, a graduate of CMD Amsterdam, discussed how designers can use their knowledge to enhance collaboration. Deanna currently works as a frontend developer at Software Bastards for the Nationale Postcode Loterij.
+
+Deanna explained the handoff processs of a design. This process consists of several stages. Design is shared through Zeplin and Invision links, while content is provided in a separate copy document. Testing involves checking for design, copy, and functionality errors. This is followed by a review that includes marketeers and designers testing the flows.
+
+The handoff from design to development was highlighted as an area of concern. Often, designs are provided without clear explanations of component functionality, standardized formats (e.g., 4px - 8px - 16px), and sufficient file types (e.g., png, webp). Additionally, incorrectly cropped images are received. These issues lead to incorrect technical decisions, deviations from the original design by developers, time wasted on conversions, and a preference for doing things alone rather than seeking clarification in the short term.
+
+To address these challenges, it was suggested that designers with knowledge of the process be proactive in improving workflows. They should observe the design process, provide feedback without hesitation, maintain open communication regarding preferred delivery methods, and schedule recurring meetings with relevant teams.

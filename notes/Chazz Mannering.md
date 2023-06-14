@@ -1,5 +1,3 @@
-<!-- todo -->
-
 Chazz Mannering is 26 years old. He completed his pre-university education (HAVO) and then pursued a 1-year course in ICT before enrolling in CMD (Communication and Multimedia Design). He jokingly refers to himself as having "eternal student syndrome."
 
 Chazz started his journey at CMD in 2017 and completed all the available tech tracks. In the meantime, he worked as a Frontend Developer. CF, which stands for Data-driven Design & Technology Consultancy, focuses on unraveling the complexities of the world through data, design, and technology. Chazz contributed to the creation of a Corona Dashboard and gained experience in data visualization and data-driven experiences.

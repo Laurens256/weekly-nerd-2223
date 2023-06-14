@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" href="data:;base64,iVBORw0KGgo=" />
-		
+
 		<link rel="stylesheet" href="../styles/main.css" />
 
 		<title>Susan Lau</title>
@@ -14,11 +14,96 @@
 		<a class="back-home" href="../index.html">Back to home</a>
 		<article class="full-story">
 			<header>
-				<h1>:empty title</h1>
+				<h1>Cool animation I found</h1>
 				<small>Susan Lau - February 2023</small>
 			</header>
-			
-			<!-- todo -->
+
+			<p>
+				I'm sure the talk Susan Lau gave was very interesting and useful. Sadly, the room
+				was quite cramped and she did not have a microphone so I could only make out a few
+				words about SQL and databases and stuff like that. So rather than writing my
+				report on Susan Lau's talk here, take a look at this neat way to animate text
+				using svg and css
+			</p>
+
+			<label for="toggle">Toggle animation</label>
+			<input id="toggle" type="checkbox">
+			<svg viewBox="0 0 650 300">
+				<symbol id="s-text">
+					<text text-anchor="middle" x="50%" y="50%" dy=".35em">Susan</text>
+				</symbol>
+
+				<use xlink:href="#s-text"></use>
+				<use xlink:href="#s-text"></use>
+				<use xlink:href="#s-text"></use>
+				<use xlink:href="#s-text"></use>
+				<use xlink:href="#s-text"></use>
+			</svg>
+
+			<p>
+				I found this animation on
+				<a target="_blank" href="https://tympanus.net/Tutorials/AnimatedTextFills/"
+					>Tympanus</a
+				>, along with some other cool ones. This one caught my eye the most though. It
+				uses the <code>stroke-dasharray</code> and
+				<code>stroke-dashoffset</code> properties to create the animation. The
+				<code>stroke-dasharray</code> property specifies the length of the dashes and the
+				gaps between them. The <code>stroke-dashoffset</code> property specifies the
+				distance between the start of the dash and the start of the path. By animating the
+				<code>stroke-dashoffset</code> property, we can make it look like the dashes are
+				moving along the path.
+			</p>
 		</article>
+
+		<!-- yes inline because i'm lazy -->
+		<style>
+			/* cool css animation thingy: https://tympanus.net/Tutorials/AnimatedTextFills/ */
+			svg {
+				font-size: 10rem;
+				text-transform: uppercase;
+				font-family: 'Open Sans', 'sans-serif';
+			}
+
+			svg use {
+				fill: none;
+				stroke-width: 6;
+				stroke-linejoin: round;
+				stroke-dasharray: 70 330;
+				animation: stroke 15s infinite linear paused;
+			}
+
+			input:checked + svg use {
+				animation-play-state: running;
+			}
+
+			svg use:nth-of-type(5n + 1) {
+				stroke: #f2385a;
+				animation-delay: -1.2s;
+			}
+			svg use:nth-of-type(5n + 2) {
+				stroke: #f5a503;
+				animation-delay: -2.4s;
+			}
+			svg use:nth-of-type(5n + 3) {
+				stroke: var(--text-color);
+				animation-delay: -3.6s;
+			}
+			svg use:nth-of-type(5n + 4) {
+				stroke: #56d9cd;
+				animation-delay: -4.8s;
+			}
+			svg use:nth-of-type(5n + 5) {
+				stroke: #3aa1bf;
+				animation-delay: -6s;
+			}
+			@keyframes stroke {
+				from {
+					stroke-dashoffset: 800;
+				}
+				to {
+					stroke-dashoffset: 0;
+				}
+			}
+		</style>
 	</body>
 </html>
