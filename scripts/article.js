@@ -23,11 +23,11 @@ const scrollToTop = () => {
 	});
 };
 
+// prettier-ignore
+const illegalChars = [':','/','?','#','[',']','@','!','$','&',"'",'(',')','*','+',',',';','='];
 const setHeadingIds = () => {
 	const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
 
-	// prettier-ignore
-	const illegalChars = [':','/','?','#','[',']','@','!','$','&',"'",'(',')','*','+',',',';','='];
 
 	headings.forEach((heading) => {
 		const id = heading.textContent
