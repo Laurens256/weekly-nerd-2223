@@ -10,6 +10,7 @@
 
 		<title>Express.js Middleware</title>
 		<script src="../scripts/prism.js" defer></script>
+		<script src="../scripts/article.js" defer></script>
 	</head>
 	<body>
 		<a class="back-home" href="../index.html">Back to home</a>
@@ -179,7 +180,7 @@ export { setHeadData };
 
 				<div>
 					<h3>Set cache headers</h3>
-					<p>The code below is taken from my server side rendere Pokédex project. This middleware checks any outgoing requests, if the request URL contains a substring, in this case <code>pokemon, cache-control headers are set to the request which will be made after the middleware </code></p>
+					<p>The code below is taken from my server side rendere Pokédex project. This middleware checks any outgoing requests, if the request URL contains a substring, in this case pokemon, cache-control headers with a max-age are set to the request. For this specific example, this specific request is cached for 1 day.</p>
 					<pre><code class="language-typescript">
 import { Request, Response, NextFunction } from 'express';
 
