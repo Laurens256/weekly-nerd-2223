@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+
+		<link rel="stylesheet" href="../styles/main.css" />
+
+		<title>Express.js Middleware</title>
+		<script src="../scripts/prism.js" defer></script>
+	</head>
+	<body>
+		<a class="back-home" href="../index.html">Back to home</a>
+		<article>
+			<header>
+				<h1>Using middleware in Express.js</h1>
+				<small>Laurens Duin - June 2023</small>
+			</header>
+
+			<p>
+				Express.js (from now on referred to as Express) is a cool framework that helps in
+				making web applications using Node.js. One of the things I like most in Express is
+				middleware. This paper gives a basic understanding of what middleware is and how
+				it works in Express. We'll talk about the different types of middleware and their
+				functions. I'll also showcase some of my own custom middleware which has helped me
+				in projects.
+			</p>
+
+			<div>
+				<h2>Introduction to middleware</h2>
+				<p>
+					Middleware acts as a bridge between the server and the application. It allows
+					for the execution of additional functionalities during the processing of HTTP
+					requests. It provides a layer of code that can intercept requests, modify them,
+					and perform various tasks such as authentication, data validation, logging, and
+					error handling. This layer greatly improves the functionality, flexibility, and
+					reusability of web applications.
+				</p>
+			</div>
+
+			<div>
+				<h2>Understanding middleware</h2>
+				<p>
+					Express.js middleware functions as a series of functions that are executed
+					sequentially during the processing of an HTTP request. Each middleware function
+					has access to the request object (req), response object (res), and a next
+					function, which allows the request to proceed to the next middleware in line.
+					There are three main types of middleware in Express.js:
+				</p>
+				<ul>
+					<li>
+						Application-level middleware: This middleware is bound to the entire
+						application and is executed for every incoming request. It can be used for
+						tasks like setting up headers, parsing request bodies, or performing
+						authentication checks.
+					</li>
+
+					<li>
+						Router-level middleware: This middleware is applied to specific routes or
+						groups of routes using Express.js routers. It allows for handling specific
+						requests differently based on the defined middleware. For example, it can
+						handle authorization for certain routes or apply specific validations.
+					</li>
+
+					<li>
+						Error handling middleware: This middleware is used to handle errors that occur
+						during the request-response cycle. It provides a centralized mechanism to
+						catch and handle errors. It is typically placed at the end of the middleware
+						stack and can generate appropriate error responses for each different error.
+					</li>
+				</ul>
+
+				<p>
+					By using these different types of middleware appropriately, your code can become
+					much more consisten, scalable and maintainable.
+				</p>
+			</div>
+
+			<div>
+				<h2>Benefits of middleware</h2>
+				<p>
+					Middleware in Express.js offers several advantages that contribute to efficient
+					web application development:
+				</p>
+
+				<ul>
+					<li>
+						Modularity and reusability: Middleware promotes modularity by allowing
+						developers to split their application logic into smaller, self-contained
+						middleware functions. This modular approach makes code more reusable, as
+						middleware functions can be applied to multiple routes or shared across
+						different applications.
+					</li>
+					<li>
+						Simplified request and response handling: Middleware simplifies the handling
+						of incoming requests and outgoing responses. Developers can use middleware to
+						perform common tasks such as parsing request data, modifying headers, or
+						validating inputs. This streamlines the development process and avoids
+						repetitive code in individual route handlers.
+					</li>
+					<li>
+						Authentication and authorization: Middleware plays a crucial role in
+						implementing authentication and authorization mechanisms in web applications.
+						By placing authentication middleware before the route handlers, developers can
+						easily verify user identities and control access to specific routes or
+						resources, ensuring only authenticated users can access protected areas.
+					</li>
+
+					<li>
+						Enhanced error handling and logging: Middleware allows for centralized error
+						handling and logging. Error handling middleware can catch and process errors,
+						providing consistent error responses to clients. Additionally, middleware can
+						be used for logging requests, responses, and application events, facilitating
+						debugging and monitoring processes.
+					</li>
+
+					<li>
+						Improved code organization: Middleware enables better code organization by
+						separating concerns and promoting a clean structure. Developers can group
+						related functionalities into middleware functions, making the codebase more
+						organized, readable, and maintainable. This modular approach also facilitates
+						code reuse and encourages a more systematic development workflow.
+					</li>
+				</ul>
+			</div>
+
+			<div>
+				<h2>Custom middleware</h2>
+				<p>
+					To finish of this article, I would like to showcase some of my own custom
+					middleware. These middleware aren't necessarily the most complicated or
+					innovative but they've made my Express projects more scalable and pleasurable to
+					work on.
+				</p>
+
+				<div>
+					<h3>Head data middleware</h3>
+					<p>
+						The following code is some middleware that I use in most of my Express
+						projects. This middleware sets the right data inside
+						<code>res.locals</code> for each route. Data inside
+						<code>res.locals</code> will be available inside the
+						<code>res.render</code> function of the route handler.
+					</p>
+					<pre><code class="language-javascript">
+import { findRoute } from '../helpers/findRoute.js';
+
+const setHeadData = async (req, res, next) => {
+	const match = await findRoute(req.originalUrl);
+
+	res.locals.head = data[match.route.path] ?? data.fallback;
+
+	next();
+};
+
+const data = {
+	'/new-project': {
+		title: 'New Project | Appclusive',
+		description: '',
+		scripts: ['createProject'],
+	},
+	'/project/:projectId': {
+		title: 'Checklist',
+		description: '',
+		scripts: ['checklist', 'projectinfo'],
+	},
+	fallback: {
+		title: 'Whoopsy',
+		description: 'whoops',
+		scripts: [],
+	},
+};
+
+export { setHeadData };
+</code></pre>
+				</div>
+
+				<div>
+					<h3>Set cache headers</h3>
+					<p>The code below is taken from my server side rendere Pokédex project. This middleware checks any outgoing requests, if the request URL contains a substring, in this case <code>pokemon, cache-control headers are set to the request which will be made after the middleware </code></p>
+					<pre><code class="language-typescript">
+import { Request, Response, NextFunction } from 'express';
+
+const setCacheHeaders = (req: Request, res: Response, next: NextFunction) => {
+	const timeInSeconds = 60 * 60 * 24; // 1 day
+
+	if (req.method == 'GET' && req.path.includes('pokemon')) {
+		res.set('Cache-control', `public, max-age=${timeInSeconds}`);
+	}
+
+	next();
+};
+
+export { setCacheHeaders };
+</code></pre>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>
