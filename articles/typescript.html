@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+
+		<link rel="stylesheet" href="../styles/main.css" />
+
+		<title>Typescript</title>
+		<script src="../scripts/prism.js" defer></script>
+		<script src="../scripts/article.js" defer></script>
+	</head>
+	<body>
+		<a class="back-home" href="../index.html">Back to home</a>
+		<article>
+			<header>
+				<h1>Typescript Vs. Javascript</h1>
+				<small>Laurens Duin - June 2023</small>
+			</header>
+
+			<p>
+				JavaScript and TypeScript are two prominent programming languages widely used for
+				web development. Even though Typescript is a superset of Javascript, the
+				differences between them couldn't be bigger. While JavaScript is a dynamically
+				typed language, TypeScript introduces static typing to (in my opninion) enhance
+				code quality and scalability.
+			</p>
+
+			<div>
+				<h2>Static typing</h2>
+				<p>
+					As stated, the main difference between Javascript and Typescript is their typing
+					system. But what exactly does static typing mean. In short; when a variable is
+					assigned a type e.g. <code>string</code>, <code>number</code>,
+					<code>string[]</code> etc. this type is not allowed to be changed later on in
+					the code. Allow me to clarify with an example.
+				</p>
+				<pre>
+<h3>In Javascript:</h3>
+<code class="language-javascript">
+let myNumner = 10;
+console.log(typeof myNumner); // Result: number
+
+myNumner = "Hello!";
+console.log(typeof myNumner); // Result: string
+</code>
+				</pre>
+				<p>
+					In this example, the type our variable <code>myNumber</code> starts out as a
+					number. However, because Javascript is dynamically typed, it allows us to change
+					this data type to whatever we like, in this case a string.
+				</p>
+			</div>
+		</article>
+	</body>
+</html>
