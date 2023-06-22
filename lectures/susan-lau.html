@@ -21,7 +21,7 @@
 
 			<p>
 				I'm sure the talk Susan Lau gave was very interesting and useful. Sadly, the room
-				was quite cramped and she did not have a microphone so I could only make out a few
+				was quite cramped and Susan did not have a microphone so I could only make out a few
 				words about SQL and databases and stuff like that. So rather than writing my
 				report on Susan Lau's talk here, take a look at this neat way to animate text
 				using svg and css
@@ -57,6 +57,13 @@
 		</article>
 
 		<!-- yes inline because i'm lazy -->
+		<script>
+			if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+				const checkbox = document.querySelector('#toggle');
+				checkbox.checked = true;
+			}
+		</script>
+
 		<style>
 			/* cool css animation thingy: https://tympanus.net/Tutorials/AnimatedTextFills/ */
 			svg {

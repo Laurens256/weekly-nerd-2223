@@ -21,38 +21,120 @@
 			</header>
 
 			<p>
-				JavaScript and TypeScript are two prominent programming languages widely used for
+				Javascript and TypeScript are two prominent programming languages widely used for
 				web development. Even though Typescript is a superset of Javascript, the
-				differences between them couldn't be bigger. While JavaScript is a dynamically
+				differences between them couldn't be bigger. While Javascript is a dynamically
 				typed language, TypeScript introduces static typing to (in my opninion) enhance
 				code quality and scalability.
 			</p>
 
-			<div>
-				<h2>Static typing</h2>
-				<p>
-					As stated, the main difference between Javascript and Typescript is their typing
-					system. But what exactly does static typing mean. In short; when a variable is
-					assigned a type e.g. <code>string</code>, <code>number</code>,
-					<code>string[]</code> etc. this type is not allowed to be changed later on in
-					the code. Allow me to clarify with an example.
-				</p>
-				<pre>
-<h3>In Javascript:</h3>
-<code class="language-javascript">
-let myNumner = 10;
-console.log(typeof myNumner); // Result: number
+			<h2>Static typing</h2>
+			<p>
+				As stated, the main difference between Javascript and Typescript is their typing
+				system. But what exactly does static typing mean. In short; when a variable is
+				assigned a type e.g. <code>string</code>, <code>number</code>,
+				<code>string[]</code> etc. this type is not allowed to be changed later on in the
+				code. Allow me to clarify with an example.
+			</p>
+			<h3>In Javascript</h3>
 
-myNumner = "Hello!";
-console.log(typeof myNumner); // Result: string
-</code>
+			<pre>
+					<code class="language-javascript">
+let myNumber = 10;
+console.log(myNumber); // Result: 10
+
+myNumber = "Hello!";
+console.log(myNumber); // Result: Hello!
+					</code>
 				</pre>
-				<p>
-					In this example, the type our variable <code>myNumber</code> starts out as a
-					number. However, because Javascript is dynamically typed, it allows us to change
-					this data type to whatever we like, in this case a string.
-				</p>
-			</div>
+			<p>
+				In this example, the type our variable <code>myNumber</code> starts out as a
+				number. However, because Javascript is dynamically typed, it allows us to change
+				this data type to whatever we like, in this case a string.
+			</p>
+
+			<h3>In Typescript</h3>
+			<p>
+				In Typescript, this works a little differently. Since Typescript is statically
+				typed, it means the data type of variables can't be changed after assignment. So
+				the same code example from above, but in Typescript would result in the following
+				TypeError.
+			</p>
+			<pre>
+					<code class="language-typescript">
+let myNumber = 10;
+console.log(myNumber); // Result: 10
+
+myNumber = "Hello!";  // Error: Type 'string' is not assignable to type 'number'
+console.log(myNumber);
+					</code>
+				</pre>
+			<p>
+				Now depending on your <code>tsconfig</code> (Typescript config), your code could
+				still be ran, since any valid Javascript is valid in Typescript. However, most
+				often it's better to abide by the Typescript laws and change your code. A way to
+				make the above code run is by giving our variable two possible types using a colon
+				like so:
+			</p>
+			<pre>
+					<code class="language-typescript">
+let myNumberOrString: number | string = 10;
+console.log(myNumber); // Result: 10
+
+myNumber = "Hello!";
+console.log(myNumber); // Result: Hello!
+					</code>
+				</pre>
+
+			<h2>Typescript interfaces</h2>
+			<p>
+				TypeScript interfaces are a fundamental feature that allows developers to define
+				the structure and shape of objects. They describe the properties, their types, and
+				whether they are required or optional. Interfaces enable type checking for larger
+				datasets, ensuring that objects adhere to a specific structure and providing early
+				detection of potential errors.
+			</p>
+
+			<h3>Use cases</h3>
+			<p>
+				In the simpler examples provided above, our Typescript doesn't really help us all
+				that much. Where Typescript really becomes useful is when working on larger
+				projects, especially ones with external data sources. To view some more advanced
+				Typescript code, check out
+				<a target="_blank" href="https://github.com/Laurens256/web-app-from-scratch-2223"
+					>this project</a
+				>
+				or take a look at <a href="https://laurensduin.nl/">my portfolio</a> ;);
+			</p>
+
+			<h3>Function signatures</h3>
+			<p>
+				Finally, what I love about Typescript is how the code documents itself. What I
+				mean by this is because of the strict type system, the code knows in advance what
+				the paramaters, return types atc. are going to be. Provided you're using a code
+				editor with Typescript intellisense, this documentation is shown on hover. For
+				example, when hovering over a function call, a return value and the types of
+				parameters will be specief.
+			</p>
+
+			<p>
+				TypeScript also supports optional and default parameters, which further enhance
+				self-documentation. By marking certain parameters as optional or providing default
+				values, the function signature communicates that those parameters are not required
+				for every function call. Just like in Javascript, default paramaters can also be
+				set, which effectively makes the parameter optional.
+			</p>
+
+			<p>
+				By utilizing these TypeScript features, functions become self-documented,
+				providing clear guidelines on parameter types, return types, and optional/default
+				behaviors. This enables better understanding, collaboration, and maintenance of
+				codebases, as developers can rely on the self-documented functions to accurately
+				represent their expected behavior.
+			</p>
+
+			<h2>To close off...</h2>
+			<p>To full document all things great about Typescript, you could write a complete book. To keep things summarily though, I will leave it at this. If you're interested to learn more about Typescript, buy my course for only €700 (results not guaranteed).</p>
 		</article>
 	</body>
 </html>
