@@ -143,6 +143,8 @@ button.back-to-top {
 	border-radius: 8px;
 }
 
+
+body button.back-to-top:focus-visible,
 body.show-scroll button.back-to-top {
 	bottom: 1rem;
 }
