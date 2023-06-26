@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="../styles/main.css" />
 
 		<title>Progressive web apps</title>
-		<!-- <script src="../scripts/prism.js" defer></script> -->
+		<script src="../scripts/prism.js" defer></script>
 		<script src="../scripts/article.js" defer></script>
 	</head>
 	<body>
@@ -21,11 +21,12 @@
 			</header>
 
 			<p>
-				In today's digital landscape, with so many building a seamless and engaging user experience
-				is paramount. Progressive Web Apps (PWAs) have emerged as a powerful solution,
-				combining the best of web and native applications. In this article, we will
-				explore the benefits and features of PWAs, highlighting their offline
-				capabilities, push notifications, and app-like experiences.
+				In today's digital landscape, with more devices, platforms, and browsers than
+				ever, it keeps getting harder to build a seamless user experience for all users.
+				Progressive Web Apps (PWAs) have emerged as a powerful solution, combining the
+				best of web- and native applications. In this article, we will discuss the
+				benefits and features of PWAs, like offline capabilities, push notifications, and
+				app-like experiences.
 			</p>
 
 			<h2>Benefits of PWAs:</h2>
@@ -33,14 +34,15 @@
 			<ul>
 				<li>
 					Offline Capabilities: One of the standout features of PWAs is their ability to
-					function offline or with limited connectivity. PWAs leverage service workers to
-					cache essential resources, allowing users to access content and perform tasks
+					function offline or with limited connectivity. PWAs can leverage service workers
+					to cache essential resources, allowing users to access content and perform tasks
 					even when offline. This feature significantly enhances user convenience,
 					especially in areas with unreliable internet access.
 				</li>
 
 				<li>
-					Improved Performance: PWAs are designed to be fast and responsive, providing a
+					Improved performance: Though this is not a feature exclusive to PWAs, it is
+					worth mentioning that PWAs are designed to be fast and responsive, providing a
 					smooth user experience. By leveraging techniques like caching, preloading, and
 					efficient resource management, PWAs reduce loading times and offer a snappy
 					interface, rivaling native applications.
@@ -51,9 +53,64 @@
 					development for each platform, PWAs are built using web technologies such as
 					HTML, CSS, and JavaScript. This enables developers to create a single codebase
 					that works seamlessly across multiple platforms, including desktops,
-					smartphones, and tablets.
+					smartphones, tablets and anything that runs a (modern) browser.
 				</li>
 			</ul>
+
+			<p>
+				To show a simple example of how service workers can be used to implement offline
+				functionality, take a look at the code below.
+			</p>
+
+			<pre>
+				<code class="language-javascript">
+const offlineCacheName = 'offline';
+const offlineCacheFiles = [
+	'/main.css',
+	'/offline.html',
+	'/manifest.json',
+	'/fonts/pokemon-fire-red.woff2',
+	'/img/favicon.png',
+];
+
+self.addEventListener('install', (event) => {
+	event.waitUntil(
+		(async () => {
+			const cache = await caches.open(offlineCacheName);
+			await cache.addAll(offlineCacheFiles);
+		})()
+	);
+});
+
+
+self.addEventListener('fetch', async (event) => {
+	event.respondWith(
+		fetch(event.request)
+			.then((response) => {
+				return response;
+			})
+			.catch(async () => {
+				// If there's no network, serve the cached response
+				const response = await caches.match(event.request);
+				if (response) {
+					return response;
+				} else {
+					// If there's no cached response, serve the fallback HTML page
+					return caches.match('/offline.html');
+				}
+			})
+	);
+});
+					
+				</code>
+			</pre>
+
+			<p>
+				Now, this code is a pretty simple example which serves a static fallback page if
+				there's no connectivity. However, much more advanced service-workers can be
+				written. Certain websites could even be almost entirely functional without an
+				internet connection.
+			</p>
 
 			<h2>Features of PWAs:</h2>
 
@@ -66,10 +123,10 @@
 				</li>
 
 				<li>
-					Push Notifications: PWAs leverage the Push API to send push notifications to
-					users, even when the PWA is not actively running. This allows businesses and
-					developers to engage with users, send updates, and drive user re-engagement,
-					similar to how native apps leverage push notifications.
+					Push Notifications: PWAs can use the Push API to send push notifications to
+					users, even when the PWA is not actively running. Though I would find it very
+					annoying to get push notifications from a website, it's still a feature greedy
+					corporations like.
 				</li>
 
 				<li>
@@ -83,14 +140,16 @@
 			<h2>Conclusion:</h2>
 
 			<p>
-				Progressive Web Apps (PWAs) have revolutionized the way we interact with web
-				applications, blurring the lines between web and native experiences. With their
-				offline capabilities, push notifications, and app-like interfaces, PWAs offer
-				users an engaging and reliable experience, regardless of their internet
-				connectivity. As more businesses and developers embrace PWAs, we can expect to see
-				a new era of web applications that combine the best features of both worlds. By
-				exploring the benefits and features of PWAs, we can understand why they have
-				gained immense popularity and become a compelling choice for web development.
+				Progressive Web Apps have opened up new possibilities for interacting on the web,
+				blurring the lines between web and native experiences. With their offline
+				capabilities, push notifications, and app-like interfaces, PWAs offer users an
+				engaging and reliable experience, regardless of their internet connectivity. As
+				more businesses and developers embrace PWAs, we can expect to see a new era of web
+				applications that combine the best features of both worlds. After a smaller
+				assignment I did using PWAs, I wasn't fully convinced of the benefits of PWAs.
+				However, after writing this article and diving into the subject a bit more, I have
+				come to appreciate the benefits of PWAs. I think this is a technology that will
+				become more and more important in the future.
 			</p>
 		</article>
 	</body>
